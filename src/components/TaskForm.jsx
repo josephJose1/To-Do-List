@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../stylesheets/TaskForm.css'
+import '../stylesheets/TaskForm.css';
+import { v4 as uuidv4 } from 'uuid';
 
 function TaskForm(props) {
 
@@ -7,18 +8,27 @@ function TaskForm(props) {
 
 	const handleChange = e => {
 		console.log('writting...')
+		setInput(e.target.value); /* extract value from text */
 	}
 
-	const handleForm = e => {
+	const handleSubmitForm = e => {
+		// to avoid a complete reload 
+		e.preventDefault();
+		console.log('Sending form')
 		const newTask = {
-			id: '34545',
-			texto:'hola'
+			id: uuidv4(),
+			texto:input,
+			complete : false
 			
 		}
+		console.log(newTask);
+		props.onSubmit(newTask);
 	}
 
 	return (
-		<form className='task-form'>
+		<form 
+			className='task-form' 
+			onSubmit={handleSubmitForm}>
 			<input 
 				className='task-input'
 				type='text' 
