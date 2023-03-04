@@ -9,7 +9,7 @@ function TaskForm(props) {
 	const handleChange = e => {
 		console.log('writting...')
 		setInput(e.target.value); /* extract value from text */
-	}
+	};
 
 	const handleSubmitForm = e => {
 		// to avoid a complete reload 
@@ -23,7 +23,7 @@ function TaskForm(props) {
 		}
 		console.log(newTask);
 		props.onSubmit(newTask);
-	}
+	};
 
 	return (
 		<form 

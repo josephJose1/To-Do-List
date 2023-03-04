@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Task from "./Task";
 import TaskForm from "./TaskForm";
+import '../stylesheets/ToDoList.css'
 
 function ToDoList(){
 
@@ -9,11 +10,25 @@ function ToDoList(){
 	const addTask = task => {
 		if(task.texto.trim()){//verify
 			task.texto = task.texto.trim();//unnesesary spaces
-			const tasksUpdate = [task, ... tasks]// add to the beginning
+			const tasksUpdate = [task, ...tasks]// add to the beginning
 			setTask(tasksUpdate);//done
 		}
 	};
 
+	const deleteTask = id => {
+		const tasksUpdate = tasks.filter(task => task.id !== id);
+		setTask (tasksUpdate);//done
+	};
+
+	const completeTask = id => {
+		const tasksUpdate = tasks.map(task => {
+			if(task.id === id){
+				task.complete = !task.complete;
+			}
+			return task;
+		});
+		setTask(tasksUpdate);	//we don'tuses array method bause we need to use se
+	};
 	return (
 		<>
 		{/* we don't want to add more divs */}
@@ -26,7 +41,8 @@ function ToDoList(){
 							id ={task.id} //key is not a probs //very common and necessary
 							texto = {task.texto}
 							complete = {task.complete}
-
+							completeTask = {completeTask}
+							deleteTask = {deleteTask}
 							//time min 6:54
 						/>
 

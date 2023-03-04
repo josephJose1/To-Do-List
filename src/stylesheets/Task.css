@@ -12,6 +12,21 @@
 	cursor: pointer;
 
 }
+/* Colors */
+.container-task:nth-child(3n + 1){
+	/* para el enecimo hijo se repetira la secuancia de colores */
+	background-color: #1b1b32;
+}
+.container-task:nth-child(3n + 2){
+	/* para el enecimo hijo se repetira la secuancia de colores */
+	background-color: #2a2a40;
+}
+.container-task:nth-child(3n + 3){
+	/* para el enecimo hijo se repetira la secuancia de colores */
+	background-color: #3b3b4f;
+	
+
+}
 
 /* Text */
 .text-task{

@@ -4,7 +4,7 @@ import ToDoList from './components/ToDoList';
 
 function App() {
   return (
-    <div className="task-App">
+    <div className='task-App'>
       <FreeCodeLogo/>
 
       <div className='main-task-list'>

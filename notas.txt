@@ -4,3 +4,9 @@ react icon with a package
 npm install react-icons --save
 
 npm install uuid
+
+#save notes 
+#change focus
+
+
+#working with class components
